@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */; };
+		ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB21DDFD4F200328E45 /* GameScene.sks */; };
+		ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB41DDFD4F200328E45 /* Actions.sks */; };
+		ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADB61DDFD4F200328E45 /* GameScene.swift */; };
+		ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADB81DDFD4F200328E45 /* GameViewController.swift */; };
+		ED50ADBC1DDFD4F200328E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADBA1DDFD4F200328E45 /* Main.storyboard */; };
+		ED50ADBE1DDFD4F200328E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADBD1DDFD4F200328E45 /* Assets.xcassets */; };
+		ED50ADC11DDFD4F200328E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */; };
+		ED50ADCC1DDFD4F200328E45 /* CityCyclerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADCB1DDFD4F200328E45 /* CityCyclerTests.swift */; };
+		ED50ADD71DDFD4F200328E45 /* CityCyclerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADD61DDFD4F200328E45 /* CityCyclerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED50ADC81DDFD4F200328E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED50ADA51DDFD4F200328E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED50ADAC1DDFD4F200328E45;
+			remoteInfo = CityCycler;
+		};
+		ED50ADD31DDFD4F200328E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED50ADA51DDFD4F200328E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED50ADAC1DDFD4F200328E45;
+			remoteInfo = CityCycler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED50ADAD1DDFD4F200328E45 /* CityCycler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityCycler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED50ADB21DDFD4F200328E45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		ED50ADB41DDFD4F200328E45 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		ED50ADB61DDFD4F200328E45 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		ED50ADB81DDFD4F200328E45 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		ED50ADBB1DDFD4F200328E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED50ADBD1DDFD4F200328E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED50ADC01DDFD4F200328E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED50ADC21DDFD4F200328E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED50ADC71DDFD4F200328E45 /* CityCyclerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityCyclerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED50ADCB1DDFD4F200328E45 /* CityCyclerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCyclerTests.swift; sourceTree = "<group>"; };
+		ED50ADCD1DDFD4F200328E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED50ADD21DDFD4F200328E45 /* CityCyclerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityCyclerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED50ADD61DDFD4F200328E45 /* CityCyclerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCyclerUITests.swift; sourceTree = "<group>"; };
+		ED50ADD81DDFD4F200328E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED50ADAA1DDFD4F200328E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADC41DDFD4F200328E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADCF1DDFD4F200328E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED50ADA41DDFD4F200328E45 = {
+			isa = PBXGroup;
+			children = (
+				ED50ADAF1DDFD4F200328E45 /* CityCycler */,
+				ED50ADCA1DDFD4F200328E45 /* CityCyclerTests */,
+				ED50ADD51DDFD4F200328E45 /* CityCyclerUITests */,
+				ED50ADAE1DDFD4F200328E45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED50ADAE1DDFD4F200328E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED50ADAD1DDFD4F200328E45 /* CityCycler.app */,
+				ED50ADC71DDFD4F200328E45 /* CityCyclerTests.xctest */,
+				ED50ADD21DDFD4F200328E45 /* CityCyclerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED50ADAF1DDFD4F200328E45 /* CityCycler */ = {
+			isa = PBXGroup;
+			children = (
+				ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */,
+				ED50ADB21DDFD4F200328E45 /* GameScene.sks */,
+				ED50ADB41DDFD4F200328E45 /* Actions.sks */,
+				ED50ADB61DDFD4F200328E45 /* GameScene.swift */,
+				ED50ADB81DDFD4F200328E45 /* GameViewController.swift */,
+				ED50ADBA1DDFD4F200328E45 /* Main.storyboard */,
+				ED50ADBD1DDFD4F200328E45 /* Assets.xcassets */,
+				ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */,
+				ED50ADC21DDFD4F200328E45 /* Info.plist */,
+			);
+			path = CityCycler;
+			sourceTree = "<group>";
+		};
+		ED50ADCA1DDFD4F200328E45 /* CityCyclerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED50ADCB1DDFD4F200328E45 /* CityCyclerTests.swift */,
+				ED50ADCD1DDFD4F200328E45 /* Info.plist */,
+			);
+			path = CityCyclerTests;
+			sourceTree = "<group>";
+		};
+		ED50ADD51DDFD4F200328E45 /* CityCyclerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED50ADD61DDFD4F200328E45 /* CityCyclerUITests.swift */,
+				ED50ADD81DDFD4F200328E45 /* Info.plist */,
+			);
+			path = CityCyclerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED50ADAC1DDFD4F200328E45 /* CityCycler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED50ADDB1DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCycler" */;
+			buildPhases = (
+				ED50ADA91DDFD4F200328E45 /* Sources */,
+				ED50ADAA1DDFD4F200328E45 /* Frameworks */,
+				ED50ADAB1DDFD4F200328E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityCycler;
+			productName = CityCycler;
+			productReference = ED50ADAD1DDFD4F200328E45 /* CityCycler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED50ADC61DDFD4F200328E45 /* CityCyclerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED50ADDE1DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerTests" */;
+			buildPhases = (
+				ED50ADC31DDFD4F200328E45 /* Sources */,
+				ED50ADC41DDFD4F200328E45 /* Frameworks */,
+				ED50ADC51DDFD4F200328E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED50ADC91DDFD4F200328E45 /* PBXTargetDependency */,
+			);
+			name = CityCyclerTests;
+			productName = CityCyclerTests;
+			productReference = ED50ADC71DDFD4F200328E45 /* CityCyclerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED50ADD11DDFD4F200328E45 /* CityCyclerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED50ADE11DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerUITests" */;
+			buildPhases = (
+				ED50ADCE1DDFD4F200328E45 /* Sources */,
+				ED50ADCF1DDFD4F200328E45 /* Frameworks */,
+				ED50ADD01DDFD4F200328E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED50ADD41DDFD4F200328E45 /* PBXTargetDependency */,
+			);
+			name = CityCyclerUITests;
+			productName = CityCyclerUITests;
+			productReference = ED50ADD21DDFD4F200328E45 /* CityCyclerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED50ADA51DDFD4F200328E45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Alejandro Puente";
+				TargetAttributes = {
+					ED50ADAC1DDFD4F200328E45 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 97E8A4AYGV;
+						ProvisioningStyle = Automatic;
+					};
+					ED50ADC61DDFD4F200328E45 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 97E8A4AYGV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED50ADAC1DDFD4F200328E45;
+					};
+					ED50ADD11DDFD4F200328E45 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 97E8A4AYGV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED50ADAC1DDFD4F200328E45;
+					};
+				};
+			};
+			buildConfigurationList = ED50ADA81DDFD4F200328E45 /* Build configuration list for PBXProject "CityCycler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED50ADA41DDFD4F200328E45;
+			productRefGroup = ED50ADAE1DDFD4F200328E45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED50ADAC1DDFD4F200328E45 /* CityCycler */,
+				ED50ADC61DDFD4F200328E45 /* CityCyclerTests */,
+				ED50ADD11DDFD4F200328E45 /* CityCyclerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED50ADAB1DDFD4F200328E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED50ADBC1DDFD4F200328E45 /* Main.storyboard in Resources */,
+				ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */,
+				ED50ADBE1DDFD4F200328E45 /* Assets.xcassets in Resources */,
+				ED50ADC11DDFD4F200328E45 /* LaunchScreen.storyboard in Resources */,
+				ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADC51DDFD4F200328E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADD01DDFD4F200328E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED50ADA91DDFD4F200328E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */,
+				ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */,
+				ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADC31DDFD4F200328E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED50ADCC1DDFD4F200328E45 /* CityCyclerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED50ADCE1DDFD4F200328E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED50ADD71DDFD4F200328E45 /* CityCyclerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED50ADC91DDFD4F200328E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED50ADAC1DDFD4F200328E45 /* CityCycler */;
+			targetProxy = ED50ADC81DDFD4F200328E45 /* PBXContainerItemProxy */;
+		};
+		ED50ADD41DDFD4F200328E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED50ADAC1DDFD4F200328E45 /* CityCycler */;
+			targetProxy = ED50ADD31DDFD4F200328E45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED50ADBA1DDFD4F200328E45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED50ADBB1DDFD4F200328E45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED50ADC01DDFD4F200328E45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED50ADD91DDFD4F200328E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED50ADDA1DDFD4F200328E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED50ADDC1DDFD4F200328E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCycler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCycler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED50ADDD1DDFD4F200328E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCycler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCycler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED50ADDF1DDFD4F200328E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCyclerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCyclerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityCycler.app/CityCycler";
+			};
+			name = Debug;
+		};
+		ED50ADE01DDFD4F200328E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCyclerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCyclerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityCycler.app/CityCycler";
+			};
+			name = Release;
+		};
+		ED50ADE21DDFD4F200328E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCyclerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCyclerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CityCycler;
+			};
+			name = Debug;
+		};
+		ED50ADE31DDFD4F200328E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 97E8A4AYGV;
+				INFOPLIST_FILE = CityCyclerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCyclerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CityCycler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED50ADA81DDFD4F200328E45 /* Build configuration list for PBXProject "CityCycler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED50ADD91DDFD4F200328E45 /* Debug */,
+				ED50ADDA1DDFD4F200328E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED50ADDB1DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCycler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED50ADDC1DDFD4F200328E45 /* Debug */,
+				ED50ADDD1DDFD4F200328E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED50ADDE1DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED50ADDF1DDFD4F200328E45 /* Debug */,
+				ED50ADE01DDFD4F200328E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED50ADE11DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED50ADE21DDFD4F200328E45 /* Debug */,
+				ED50ADE31DDFD4F200328E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED50ADA51DDFD4F200328E45 /* Project object */;
+}
