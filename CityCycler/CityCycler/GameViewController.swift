@@ -14,12 +14,13 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var road: RoadView!
     
-    
+    var player: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         road.addDriveAnimation()
+        gameInit()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -36,6 +37,17 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    
+    
+    func gameInit(){
+        player = UIImageView(image: UIImage(named: "bike"))
+        player.frame = CGRect(x:0, y:0, width:60, height:91)
+        player.frame.origin.y = self.view.bounds.height - player.frame.size.height - 10
+        player.center.x = self.view.bounds.midX
+        
+        self.view.insertSubview(player, aboveSubview: road)
+        
     }
 
     override var shouldAutorotate: Bool {
