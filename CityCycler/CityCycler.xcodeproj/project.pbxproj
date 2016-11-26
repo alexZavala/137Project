@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25476BB31DEA468400E76E47 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB01DEA468400E76E47 /* road.png */; };
+		25476BB41DEA468400E76E47 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB11DEA468400E76E47 /* road@2x.png */; };
+		25476BB51DEA468400E76E47 /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25476BB21DEA468400E76E47 /* RoadView.swift */; };
 		ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */; };
 		ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB21DDFD4F200328E45 /* GameScene.sks */; };
 		ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB41DDFD4F200328E45 /* Actions.sks */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25476BB01DEA468400E76E47 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
+		25476BB11DEA468400E76E47 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
+		25476BB21DEA468400E76E47 /* RoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
 		ED50ADAD1DDFD4F200328E45 /* CityCycler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityCycler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED50ADB21DDFD4F200328E45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -80,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25476BAE1DEA468400E76E47 /* driveAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				25476BAF1DEA468400E76E47 /* images */,
+				25476BB21DEA468400E76E47 /* RoadView.swift */,
+			);
+			path = driveAnimation;
+			sourceTree = "<group>";
+		};
+		25476BAF1DEA468400E76E47 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				25476BB01DEA468400E76E47 /* road.png */,
+				25476BB11DEA468400E76E47 /* road@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		ED50ADA41DDFD4F200328E45 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +127,7 @@
 		ED50ADAF1DDFD4F200328E45 /* CityCycler */ = {
 			isa = PBXGroup;
 			children = (
+				25476BAE1DEA468400E76E47 /* driveAnimation */,
 				ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */,
 				ED50ADB21DDFD4F200328E45 /* GameScene.sks */,
 				ED50ADB41DDFD4F200328E45 /* Actions.sks */,
@@ -197,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Alejandro Puente";
 				TargetAttributes = {
 					ED50ADAC1DDFD4F200328E45 = {
@@ -245,10 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED50ADBC1DDFD4F200328E45 /* Main.storyboard in Resources */,
+				25476BB41DEA468400E76E47 /* road@2x.png in Resources */,
 				ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */,
 				ED50ADBE1DDFD4F200328E45 /* Assets.xcassets in Resources */,
 				ED50ADC11DDFD4F200328E45 /* LaunchScreen.storyboard in Resources */,
 				ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */,
+				25476BB31DEA468400E76E47 /* road.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +302,7 @@
 			files = (
 				ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */,
 				ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */,
+				25476BB51DEA468400E76E47 /* RoadView.swift in Sources */,
 				ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +376,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -370,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -398,6 +427,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -414,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -526,6 +556,7 @@
 				ED50ADDD1DDFD4F200328E45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED50ADDE1DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +565,7 @@
 				ED50ADE01DDFD4F200328E45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED50ADE11DDFD4F200328E45 /* Build configuration list for PBXNativeTarget "CityCyclerUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +574,7 @@
 				ED50ADE31DDFD4F200328E45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,9 +11,15 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    @IBOutlet weak var road: RoadView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        road.addDriveAnimation()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
