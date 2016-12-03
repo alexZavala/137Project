@@ -13,6 +13,8 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var road: RoadView!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var player: UIImageView!
     var enemy: EnemyCarView!
@@ -26,6 +28,7 @@ class GameViewController: UIViewController {
     let rightBoarder = 180
     
     var isPlaying = false
+    var points = 0
     
     static let sharedInstance = GameViewController()
     
@@ -86,6 +89,9 @@ class GameViewController: UIViewController {
     func gameInit(){
         
         isPlaying = true
+        points = 0
+        
+        scoreLabel.text = "\(points)"
         
         //Adding the player
         player = UIImageView(image: UIImage(named: "bike"))
@@ -95,13 +101,7 @@ class GameViewController: UIViewController {
         
         
         self.view.insertSubview(player, aboveSubview: road)
-        
-        //GESTURE NOT WORKING YET
-        
-//        bikeMovementGestureRecognizer = UIGestureRecognizer(target: self, action: Selector(("playerPressed:")))
-//        bikeMovementGestureRecognizer.minimumPressDuration = 0.001
-//        road.addGestureRecognizer(bikeMovementGestureRecognizer)
-        
+
         //Adding the enemey function
         addEnemy()
         
@@ -124,31 +124,18 @@ class GameViewController: UIViewController {
             UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
                 self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
             }) { (success:Bool) -> Void in
+                
+                if self.isPlaying{
+                    self.points+=1
+                    self.scoreLabel.text = "\(self.points)"
+                
+                }
+                
                 self.enemy.removeFromSuperview()
                 self.addEnemy()
             }
         }
     }
-    
-    //NOT WORKING
-    
-//    func playerPressed(recognizer: UILongPressGestureRecognizer){
-//        if recognizer.state == UIGestureRecognizerState.ended{
-//            if animationTimer != nil{
-//                animationTimer.invalidate()
-//            }
-//        }
-//        else if recognizer.state == UIGestureRecognizerState.began{
-//            let touchPoint = recognizer.location(in: road)
-//            
-//            if touchPoint.x > road.frame.midX{
-//                animationTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.005), target: self, selector: Selector(("moveBike:")), userInfo: "right", repeats: true)
-//            }
-//            else{
-//                animationTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.005), target: self, selector:Selector(("moveBike:")), userInfo: "left", repeats: true)
-//            }
-//        }
-//    }
     
     func update (time:Timer) {
         if (player.layer.presentation()?.frame)!.intersects((enemy.layer.presentation()?.frame)!) {
@@ -162,16 +149,19 @@ class GameViewController: UIViewController {
         updateTimer.invalidate()
         
         //add explosion
-//        let explosion = ExplosionView(frame: CGRectMake(0, 0, 150, 150))
-//        explosion.center = CGPointMake(enemy.center.x, enemy.center.y - 250)
-//        explosion.contentMode = .Center
+        let explosion = ExplosionView(frame: CGRect(x: 0, y: 0,width: 100,height: 100))
+        explosion.center = CGPoint(x:enemy.center.x,y: enemy.center.y - 250)
+        explosion.contentMode = .center
         
-//        self.view.insertSubview(explosion, aboveSubview: player)
+        self.view.insertSubview(explosion, aboveSubview: player)
         
         enemy.removeFromSuperview()
         player.removeFromSuperview()
         
-//        explosion.addExplodeAnimation { (success:Bool) -> Void in
+        
+        explosion.addExplodeAnimation()
+        
+        //explosion.addExplodeAnimation { (success:Bool) -> Void in
             let alert = UIAlertController(title: "Game over!", message: "Do you want to play again?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (alertAction:UIAlertAction!) -> Void in
@@ -179,8 +169,11 @@ class GameViewController: UIViewController {
         
         
             self.present(alert, animated: true, completion: nil)
-//            explosion.removeFromSuperview()
-//        }
+            explosion.removeFromSuperview()
+        
+        //highScoreLabel = scoreLabel
+        //self.scoreLabel.text = String(0)
+       //}
     }
     
     override var shouldAutorotate: Bool {

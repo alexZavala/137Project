@@ -15,6 +15,13 @@
 		25476BB31DEA468400E76E47 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB01DEA468400E76E47 /* road.png */; };
 		25476BB41DEA468400E76E47 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB11DEA468400E76E47 /* road@2x.png */; };
 		25476BB51DEA468400E76E47 /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25476BB21DEA468400E76E47 /* RoadView.swift */; };
+		25F4939E1DF35D6200AEFDD0 /* ExplosionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F493961DF35D6200AEFDD0 /* ExplosionView.swift */; };
+		25F4939F1DF35D6200AEFDD0 /* blam1.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493981DF35D6200AEFDD0 /* blam1.png */; };
+		25F493A01DF35D6200AEFDD0 /* blam1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493991DF35D6200AEFDD0 /* blam1@2x.png */; };
+		25F493A11DF35D6200AEFDD0 /* blam2.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F4939A1DF35D6200AEFDD0 /* blam2.png */; };
+		25F493A21DF35D6200AEFDD0 /* blam2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F4939B1DF35D6200AEFDD0 /* blam2@2x.png */; };
+		25F493A31DF35D6200AEFDD0 /* blam3.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F4939C1DF35D6200AEFDD0 /* blam3.png */; };
+		25F493A41DF35D6200AEFDD0 /* blam3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F4939D1DF35D6200AEFDD0 /* blam3@2x.png */; };
 		ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */; };
 		ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB21DDFD4F200328E45 /* GameScene.sks */; };
 		ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADB41DDFD4F200328E45 /* Actions.sks */; };
@@ -53,6 +60,13 @@
 		25476BB01DEA468400E76E47 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
 		25476BB11DEA468400E76E47 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
 		25476BB21DEA468400E76E47 /* RoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
+		25F493961DF35D6200AEFDD0 /* ExplosionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionView.swift; sourceTree = "<group>"; };
+		25F493981DF35D6200AEFDD0 /* blam1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam1.png; sourceTree = "<group>"; };
+		25F493991DF35D6200AEFDD0 /* blam1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam1@2x.png"; sourceTree = "<group>"; };
+		25F4939A1DF35D6200AEFDD0 /* blam2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam2.png; sourceTree = "<group>"; };
+		25F4939B1DF35D6200AEFDD0 /* blam2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam2@2x.png"; sourceTree = "<group>"; };
+		25F4939C1DF35D6200AEFDD0 /* blam3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam3.png; sourceTree = "<group>"; };
+		25F4939D1DF35D6200AEFDD0 /* blam3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam3@2x.png"; sourceTree = "<group>"; };
 		ED50ADAD1DDFD4F200328E45 /* CityCycler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityCycler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED50ADB21DDFD4F200328E45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -134,6 +148,28 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		25F493951DF35D6200AEFDD0 /* explosion */ = {
+			isa = PBXGroup;
+			children = (
+				25F493961DF35D6200AEFDD0 /* ExplosionView.swift */,
+				25F493971DF35D6200AEFDD0 /* images */,
+			);
+			path = explosion;
+			sourceTree = "<group>";
+		};
+		25F493971DF35D6200AEFDD0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				25F493981DF35D6200AEFDD0 /* blam1.png */,
+				25F493991DF35D6200AEFDD0 /* blam1@2x.png */,
+				25F4939A1DF35D6200AEFDD0 /* blam2.png */,
+				25F4939B1DF35D6200AEFDD0 /* blam2@2x.png */,
+				25F4939C1DF35D6200AEFDD0 /* blam3.png */,
+				25F4939D1DF35D6200AEFDD0 /* blam3@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		ED50ADA41DDFD4F200328E45 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +193,7 @@
 		ED50ADAF1DDFD4F200328E45 /* CityCycler */ = {
 			isa = PBXGroup;
 			children = (
+				25F493951DF35D6200AEFDD0 /* explosion */,
 				2538056D1DED3CD500EE9C8A /* EnemyAnimationss */,
 				25476BAE1DEA468400E76E47 /* driveAnimation */,
 				ED50ADB01DDFD4F200328E45 /* AppDelegate.swift */,
@@ -299,13 +336,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F493A11DF35D6200AEFDD0 /* blam2.png in Resources */,
 				253805781DED3CD500EE9C8A /* wölkchen@2x.png in Resources */,
+				25F493A21DF35D6200AEFDD0 /* blam2@2x.png in Resources */,
 				ED50ADBC1DDFD4F200328E45 /* Main.storyboard in Resources */,
 				25476BB41DEA468400E76E47 /* road@2x.png in Resources */,
 				ED50ADB31DDFD4F200328E45 /* GameScene.sks in Resources */,
 				ED50ADBE1DDFD4F200328E45 /* Assets.xcassets in Resources */,
+				25F4939F1DF35D6200AEFDD0 /* blam1.png in Resources */,
+				25F493A01DF35D6200AEFDD0 /* blam1@2x.png in Resources */,
 				ED50ADC11DDFD4F200328E45 /* LaunchScreen.storyboard in Resources */,
 				253805771DED3CD500EE9C8A /* wölkchen.png in Resources */,
+				25F493A41DF35D6200AEFDD0 /* blam3@2x.png in Resources */,
+				25F493A31DF35D6200AEFDD0 /* blam3.png in Resources */,
 				253805761DED3CD500EE9C8A /* car4@2x.png in Resources */,
 				253805751DED3CD500EE9C8A /* car4.png in Resources */,
 				ED50ADB51DDFD4F200328E45 /* Actions.sks in Resources */,
@@ -334,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F4939E1DF35D6200AEFDD0 /* ExplosionView.swift in Sources */,
 				ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */,
 				ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */,
 				25476BB51DEA468400E76E47 /* RoadView.swift in Sources */,

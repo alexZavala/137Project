@@ -45,30 +45,30 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         
-       createObstacles()
+       //createObstacles()
     }
     
-    func createObstacles() {
-        
-        
-        let ObstaclePair = SKNode() // add obstacles to node, then be able to edit position.
-        let leftObstacle = SKSpriteNode(imageNamed: "leftObstacle")
-        let rightObstacle = SKSpriteNode(imageNamed: "rightObstacle")  // name of left and right could be the same
-        
-        leftObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2 + 500)
-        rightObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2)
-        
-        leftObstacle.setScale(0.5)
-        rightObstacle.setScale(0.5)
-        
-        
-        ObstaclePair.addChild(leftObstacle)
-        ObstaclePair.addChild(rightObstacle)
-        
-        
-        self.addChild(ObstaclePair)
-        
-    }
+//    func createObstacles() {
+//        
+//        
+//        let ObstaclePair = SKNode() // add obstacles to node, then be able to edit position.
+//        let leftObstacle = SKSpriteNode(imageNamed: "leftObstacle")
+//        let rightObstacle = SKSpriteNode(imageNamed: "rightObstacle")  // name of left and right could be the same
+//        
+//        leftObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2 + 500)
+//        rightObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2)
+//        
+//        leftObstacle.setScale(0.5)
+//        rightObstacle.setScale(0.5)
+//        
+//        
+//        ObstaclePair.addChild(leftObstacle)
+//        ObstaclePair.addChild(rightObstacle)
+//        
+//        
+//        self.addChild(ObstaclePair)
+//        
+//    }
     
     
     override func update(_ currentTime: TimeInterval) {
