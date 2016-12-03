@@ -61,13 +61,13 @@ class GameViewController: UIViewController {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-                print("Swiped right")
+//                print("Swiped right")
                 if player.frame.origin.x < CGFloat(rightBoarder){
                     player.frame.origin.x += 90
                 }
                 break
             case UISwipeGestureRecognizerDirection.left:
-                print("Swiped left")
+//                print("Swiped left")
                 if player.frame.origin.x > CGFloat(leftBoarder){
                     player.frame.origin.x -= 90
                 }
