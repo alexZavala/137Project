@@ -20,9 +20,14 @@ class GameViewController: UIViewController {
     var bikeMovementGestureRecognizer: UIGestureRecognizer!
     
     var animationTimer:Timer!
+    var updateTimer:Timer!
     
     let leftBoarder = 90
     let rightBoarder = 180
+    
+    var isPlaying = false
+    
+    static let sharedInstance = GameViewController()
     
     
     override func viewDidLoad() {
@@ -80,6 +85,8 @@ class GameViewController: UIViewController {
     
     func gameInit(){
         
+        isPlaying = true
+        
         //Adding the player
         player = UIImageView(image: UIImage(named: "bike"))
         player.frame = CGRect(x:0, y:0, width:60, height:80)
@@ -98,25 +105,28 @@ class GameViewController: UIViewController {
         //Adding the enemey function
         addEnemy()
         
+        updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.05), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
     
     func addEnemy(){
-        var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
-        let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
-        randomEnemyFrame.origin.x = CGFloat(randomX)
-        enemy = EnemyCarView(frame: randomEnemyFrame)
-        //enemy.addPoluteAnimation() //adds pollution to the animation
-        self.view.insertSubview(enemy, aboveSubview: road)
-        
-        
-        //Change duration to make the cars go faster. The lower the number the faster the car goes.
-        //Change the delay to make the cars wait to be displayed on screen.
-        UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
-        self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
-        }) { (success:Bool) -> Void in
-            self.enemy.removeFromSuperview()
-            self.addEnemy()
+        if isPlaying {
+            var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
+            let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
+            randomEnemyFrame.origin.x = CGFloat(randomX)
+            enemy = EnemyCarView(frame: randomEnemyFrame)
+            //enemy.addPoluteAnimation() //adds pollution to the animation
+            self.view.insertSubview(enemy, aboveSubview: road)
+            
+            
+            //Change duration to make the cars go faster. The lower the number the faster the car goes.
+            //Change the delay to make the cars wait to be displayed on screen.
+            UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
+            }) { (success:Bool) -> Void in
+                self.enemy.removeFromSuperview()
+                self.addEnemy()
+            }
         }
     }
     
@@ -140,6 +150,38 @@ class GameViewController: UIViewController {
 //        }
 //    }
     
+    func update (time:Timer) {
+        if (player.layer.presentation()?.frame)!.intersects((enemy.layer.presentation()?.frame)!) {
+            endGame()
+        }
+    }
+    
+    func endGame() {
+        isPlaying = false
+        enemy.layer.removeAllAnimations()
+        updateTimer.invalidate()
+        
+        //add explosion
+//        let explosion = ExplosionView(frame: CGRectMake(0, 0, 150, 150))
+//        explosion.center = CGPointMake(enemy.center.x, enemy.center.y - 250)
+//        explosion.contentMode = .Center
+        
+//        self.view.insertSubview(explosion, aboveSubview: player)
+        
+        enemy.removeFromSuperview()
+        player.removeFromSuperview()
+        
+//        explosion.addExplodeAnimation { (success:Bool) -> Void in
+            let alert = UIAlertController(title: "Game over!", message: "Do you want to play again?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (alertAction:UIAlertAction!) -> Void in
+                self.gameInit() }))
+        
+        
+            self.present(alert, animated: true, completion: nil)
+//            explosion.removeFromSuperview()
+//        }
+    }
     
     override var shouldAutorotate: Bool {
         return true

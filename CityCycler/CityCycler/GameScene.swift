@@ -9,12 +9,20 @@
 import SpriteKit
 import GameplayKit
 
+struct PhysicsCategory {
+    static let player : UInt32 = 0x01 << 1
+    static let enemy : UInt32 = 0x01 << 2
+}
+
 class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
+//        var Player = GameViewController.sharedInstance.player
+    
+        
         
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode

@@ -258,7 +258,6 @@
 				TargetAttributes = {
 					ED50ADAC1DDFD4F200328E45 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = LAPKZ7JHB5;
 						ProvisioningStyle = Automatic;
 					};
 					ED50ADC61DDFD4F200328E45 = {
@@ -494,7 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LAPKZ7JHB5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CityCycler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCycler;
@@ -508,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LAPKZ7JHB5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CityCycler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noneForNow.CityCycler;
