@@ -14,6 +14,8 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
+    var GVC = GameViewController()
+    
     override func didMove(to view: SKView) {
         
         // Get label node from scene and store it for use later
@@ -40,8 +42,12 @@ class GameScene: SKScene {
             
         }
         
+        
+        
        createObstacles()
     }
+    
+    
     
     
     func createObstacles() {
@@ -49,7 +55,7 @@ class GameScene: SKScene {
         
         let ObstaclePair = SKNode() // add obstacles to node, then be able to edit position.
         let leftObstacle = SKSpriteNode(imageNamed: "leftObstacle")
-        let rightObstacle = SKSpriteNode(imageNamed: "rightObestacle")  // name of left and right could be the same
+        let rightObstacle = SKSpriteNode(imageNamed: "rightObstacle")  // name of left and right could be the same
         
         leftObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2 + 500)
         rightObstacle.position = CGPoint(x: self.frame.width / 4, y: self.frame.height / 2)
@@ -70,49 +76,49 @@ class GameScene: SKScene {
     }
     
     
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
+//    func touchDown(atPoint pos : CGPoint) {
+//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+//            n.position = pos
+//            n.strokeColor = SKColor.green
+//            self.addChild(n)
+//        }
+//    }
+//    
+//    func touchMoved(toPoint pos : CGPoint) {
+//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+//            n.position = pos
+//            n.strokeColor = SKColor.blue
+//            self.addChild(n)
+//        }
+//    }
+//    
+//    func touchUp(atPoint pos : CGPoint) {
+//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+//            n.position = pos
+//            n.strokeColor = SKColor.red
+//            self.addChild(n)
+//        }
+//    }
+//    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if let label = self.label {
+//            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+//        }
+//        
+//        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+//    }
+//    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+//    }
+//    
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+//    }
+//    
+//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+//    }
     
     
     override func update(_ currentTime: TimeInterval) {

@@ -17,19 +17,28 @@ class GameViewController: UIViewController {
     var player: UIImageView!
     var enemy: EnemyCarView!
     
-    var bikeMovementGestureRecognizer: UILongPressGestureRecognizer!
+    var bikeMovementGestureRecognizer: UIGestureRecognizer!
     
     var animationTimer:Timer!
     
-    let leftBoarder = 55
-    let rightBoarder = 250
+    let leftBoarder = 90
+    let rightBoarder = 180
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
         road.addDriveAnimation()
         gameInit()
+        
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -46,6 +55,36 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
+//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("swipedRight:")))
+//        swipeRight.direction = .right
+//        view.addGestureRecognizer(swipeRight)
+//        
+//        
+//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("swipedLeft:")))
+//        swipeLeft.direction = .left
+//        view.addGestureRecognizer(swipeLeft)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+                if player.frame.origin.x < CGFloat(rightBoarder){
+                    player.frame.origin.x += 90
+                }
+                break
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+                if player.frame.origin.x > CGFloat(leftBoarder){
+                    player.frame.origin.x -= 90
+                }
+                break
+            default:
+                break
+            }
+        }
     }
     
     func gameInit(){
@@ -61,9 +100,9 @@ class GameViewController: UIViewController {
         
         //GESTURE NOT WORKING YET
         
-        //bikeMovementGestureRecognizer = UILongPressGestureRecognizer(target: self, action: Selector(("playerPressed:")))
-        //bikeMovementGestureRecognizer.minimumPressDuration = 0.001
-        //road.addGestureRecognizer(bikeMovementGestureRecognizer)
+//        bikeMovementGestureRecognizer = UIGestureRecognizer(target: self, action: Selector(("playerPressed:")))
+//        bikeMovementGestureRecognizer.minimumPressDuration = 0.001
+//        road.addGestureRecognizer(bikeMovementGestureRecognizer)
         
         //Adding the enemey function
         addEnemy()
@@ -111,18 +150,33 @@ class GameViewController: UIViewController {
 //    }
     
     
+    
+    func swipedRight(sender:UISwipeGestureRecognizer){
+        print("swiped right")
+        if player.frame.origin.x < CGFloat(rightBoarder){
+            player.frame.origin.x += 65
+        }
+    }
+    
+    func swipedLeft(sender:UISwipeGestureRecognizer){
+        print("swiped left")
+        if player.frame.origin.x > CGFloat(leftBoarder){
+            player.frame.origin.x -= 65
+        }
+    }
+    
     func moveBike(timer:Timer){
         if let direction = timer.userInfo as! String!{
             var playerFrame = player.frame
             
             if direction == "right"{
                 if playerFrame.origin.x < CGFloat(rightBoarder){
-                    playerFrame.origin.x += 2
+                    playerFrame.origin.x += 65
                 }
                 
             }else{
                 if playerFrame.origin.x > CGFloat(leftBoarder){
-                    playerFrame.origin.x -= 2
+                    playerFrame.origin.x -= 65
                 }
             }
             
