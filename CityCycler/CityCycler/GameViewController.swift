@@ -18,18 +18,13 @@ class GameViewController: UIViewController {
     
     var player: UIImageView!
     var enemy: EnemyCarView!
-    
     var bikeMovementGestureRecognizer: UIGestureRecognizer!
-    
     var animationTimer:Timer!
     var updateTimer:Timer!
-    
     let leftBoarder = 90
     let rightBoarder = 180
-    
     var isPlaying = false
     var points = 0
-    
     static let sharedInstance = GameViewController()
     
     
@@ -48,21 +43,21 @@ class GameViewController: UIViewController {
         gameInit()
         
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+//        if let view = self.view as! SKView? {
+//            // Load the SKScene from 'GameScene.sks'
+//            if let scene = SKScene(fileNamed: "GameScene") {
+//                // Set the scale mode to scale to fit the window
+//                scene.scaleMode = .aspectFill
+//                
+//                // Present the scene
+//                view.presentScene(scene)
+//            }
+//            
+//            view.ignoresSiblingOrder = true
+//            
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//        }
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -90,7 +85,6 @@ class GameViewController: UIViewController {
         
         isPlaying = true
         points = 0
-        
         scoreLabel.text = "\(points)"
         
         //Adding the player
@@ -99,7 +93,6 @@ class GameViewController: UIViewController {
         player.frame.origin.y = self.view.bounds.height - player.frame.size.height - 10
         player.center.x = self.view.bounds.midX
         
-        
         self.view.insertSubview(player, aboveSubview: road)
 
         //Adding the enemey function
@@ -107,7 +100,6 @@ class GameViewController: UIViewController {
         
         updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.05), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
-    
     
     func addEnemy(){
         if isPlaying {
@@ -128,9 +120,12 @@ class GameViewController: UIViewController {
                 if self.isPlaying{
                     self.points+=1
                     self.scoreLabel.text = "\(self.points)"
-                
+                    
+                    if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                        self.highScoreLabel.text = self.scoreLabel.text
+                    }
+                    
                 }
-                
                 self.enemy.removeFromSuperview()
                 self.addEnemy()
             }
@@ -158,7 +153,6 @@ class GameViewController: UIViewController {
         enemy.removeFromSuperview()
         player.removeFromSuperview()
         
-        
         explosion.addExplodeAnimation()
         
         //explosion.addExplodeAnimation { (success:Bool) -> Void in
@@ -174,27 +168,6 @@ class GameViewController: UIViewController {
         //highScoreLabel = scoreLabel
         //self.scoreLabel.text = String(0)
        //}
-    }
-    
-    override var shouldAutorotate: Bool {
-        return true
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }
 
