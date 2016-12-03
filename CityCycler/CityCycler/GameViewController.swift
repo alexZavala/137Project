@@ -55,15 +55,6 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
-        
-//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("swipedRight:")))
-//        swipeRight.direction = .right
-//        view.addGestureRecognizer(swipeRight)
-//        
-//        
-//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("swipedLeft:")))
-//        swipeLeft.direction = .left
-//        view.addGestureRecognizer(swipeLeft)
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -112,7 +103,7 @@ class GameViewController: UIViewController {
     
     func addEnemy(){
         var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
-        let randomX = leftBoarder + Int(arc4random()) % rightBoarder
+        let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
         randomEnemyFrame.origin.x = CGFloat(randomX)
         enemy = EnemyCarView(frame: randomEnemyFrame)
         //enemy.addPoluteAnimation() //adds pollution to the animation
@@ -148,41 +139,6 @@ class GameViewController: UIViewController {
 //            }
 //        }
 //    }
-    
-    
-    
-    func swipedRight(sender:UISwipeGestureRecognizer){
-        print("swiped right")
-        if player.frame.origin.x < CGFloat(rightBoarder){
-            player.frame.origin.x += 65
-        }
-    }
-    
-    func swipedLeft(sender:UISwipeGestureRecognizer){
-        print("swiped left")
-        if player.frame.origin.x > CGFloat(leftBoarder){
-            player.frame.origin.x -= 65
-        }
-    }
-    
-    func moveBike(timer:Timer){
-        if let direction = timer.userInfo as! String!{
-            var playerFrame = player.frame
-            
-            if direction == "right"{
-                if playerFrame.origin.x < CGFloat(rightBoarder){
-                    playerFrame.origin.x += 65
-                }
-                
-            }else{
-                if playerFrame.origin.x > CGFloat(leftBoarder){
-                    playerFrame.origin.x -= 65
-                }
-            }
-            
-            player.frame = playerFrame
-        }
-    }
     
     
     override var shouldAutorotate: Bool {
