@@ -106,10 +106,10 @@ class GameViewController: UIViewController {
     func updateSpeed(){
         if isPlaying {
             speed += 1
-            if speed % 1 == 0 && currentTime > 0.2 {
+            if speed % 4 == 0 && currentTime > 0.2 {
                 currentTime -= 0.4//larger decrement for slower levels
             }
-            if speed % 1 == 0 && currentTime > 0.5 {
+            if speed % 4 == 0 && currentTime > 0.5 {
                 currentTime -= 0.03//smaller decrement for the faster levels
             }
         }
@@ -157,6 +157,7 @@ class GameViewController: UIViewController {
         isPlaying = false
         enemy.layer.removeAllAnimations()
         updateTimer.invalidate()
+        currentTime = 0
         
         //add explosion
         let explosion = ExplosionView(frame: CGRect(x: 0, y: 0,width: 100,height: 100))
