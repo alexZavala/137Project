@@ -32,6 +32,7 @@
 		ED50ADC11DDFD4F200328E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */; };
 		ED50ADCC1DDFD4F200328E45 /* CityCyclerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADCB1DDFD4F200328E45 /* CityCyclerTests.swift */; };
 		ED50ADD71DDFD4F200328E45 /* CityCyclerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50ADD61DDFD4F200328E45 /* CityCyclerUITests.swift */; };
+		EDBAF2861DF4BC1900F1B7CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAF2851DF4BC1900F1B7CE /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		ED50ADD21DDFD4F200328E45 /* CityCyclerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityCyclerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED50ADD61DDFD4F200328E45 /* CityCyclerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCyclerUITests.swift; sourceTree = "<group>"; };
 		ED50ADD81DDFD4F200328E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDBAF2851DF4BC1900F1B7CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				ED50ADB61DDFD4F200328E45 /* GameScene.swift */,
 				ED50ADB81DDFD4F200328E45 /* GameViewController.swift */,
 				ED50ADBA1DDFD4F200328E45 /* Main.storyboard */,
+				EDBAF2851DF4BC1900F1B7CE /* MenuViewController.swift */,
 				ED50ADBD1DDFD4F200328E45 /* Assets.xcassets */,
 				ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */,
 				ED50ADC21DDFD4F200328E45 /* Info.plist */,
@@ -380,6 +383,7 @@
 				25F4939E1DF35D6200AEFDD0 /* ExplosionView.swift in Sources */,
 				ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */,
 				ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */,
+				EDBAF2861DF4BC1900F1B7CE /* MenuViewController.swift in Sources */,
 				25476BB51DEA468400E76E47 /* RoadView.swift in Sources */,
 				253805741DED3CD500EE9C8A /* EnemyCarView.swift in Sources */,
 				ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */,
