@@ -25,7 +25,10 @@ class GameViewController: UIViewController {
     let rightBoarder = 180
     var isPlaying = false
     var points = 0
-    var speed = 0
+    //var speed = 0
+    var updateRate = 0.05
+    var gameSpeed = 2.5
+    var difficulty = 0.0
     var currentTime: CFTimeInterval = 1.8
     static let sharedInstance = GameViewController()
     
@@ -88,6 +91,9 @@ class GameViewController: UIViewController {
         isPlaying = true
         points = 0
         scoreLabel.text = "\(points)"
+        difficulty = 0.0
+        gameSpeed = 2.5
+        
         
         //Adding the player
         player = UIImageView(image: UIImage(named: "bike"))
@@ -100,20 +106,20 @@ class GameViewController: UIViewController {
         //Adding the enemey function
         addEnemy()
         
-        updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.05), target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(updateRate), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
-    func updateSpeed(){
-        if isPlaying {
-            speed += 1//counter relying on avoided cars
-            if speed % 3 == 0 && currentTime > 0.4 {
-                currentTime -= 0.2//larger decrement for slower levels
-            }
-            if speed % 3 == 0 && currentTime > 0.2 {
-                currentTime -= 0.04//smaller decrement for the faster levels
-            }
-        }
-    }
+//    func updateSpeed(){
+//        if isPlaying {
+//            speed += 1//counter relying on avoided cars
+//            if speed % 3 == 0 && currentTime > 0.4 {
+//                currentTime -= 0.2//larger decrement for slower levels
+//            }
+//            if speed % 3 == 0 && currentTime > 0.2 {
+//                currentTime -= 0.04//smaller decrement for the faster levels
+//            }
+//        }
+//    }
     
     func addEnemy(){
         if isPlaying {
@@ -124,11 +130,11 @@ class GameViewController: UIViewController {
             //enemy.addPoluteAnimation() //adds pollution to the animation
             self.view.insertSubview(enemy, aboveSubview: road)
             
-            updateSpeed()//update speed with each enemy created
+            //updateSpeed()//update speed with each enemy created
             
             //Change duration to make the cars go faster. The lower the number the faster the car goes.
             //Change the delay to make the cars wait to be displayed on screen.
-            UIView.animate(withDuration: currentTime, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+            UIView.animate(withDuration: gameSpeed, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
                 self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
             }) { (success:Bool) -> Void in
                 
@@ -148,6 +154,18 @@ class GameViewController: UIViewController {
     }
     
     func update (time:Timer) {
+        
+        if difficulty < 10 {
+            difficulty += updateRate
+        }
+        else{
+            difficulty = 0.0
+            if gameSpeed > 0.5{
+                gameSpeed -= 0.5
+            }
+        }
+        
+        
         if (player.layer.presentation()?.frame)!.intersects((enemy.layer.presentation()?.frame)!) {
             endGame()
         }
