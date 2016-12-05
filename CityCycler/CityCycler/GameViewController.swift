@@ -31,6 +31,7 @@ class GameViewController: UIViewController {
     var difficulty = 0.0
     var currentTime: CFTimeInterval = 1.8
     static let sharedInstance = GameViewController()
+    var firstLaunch:Bool = true
     
     
     override func viewDidLoad() {
@@ -88,6 +89,12 @@ class GameViewController: UIViewController {
     
     func gameInit(){
         
+        if firstLaunch {
+            points = 0
+            scoreLabel.text = "\(points)"
+            highScoreLabel.text = "\(points)"
+        }
+        
         isPlaying = true
         points = 0
         scoreLabel.text = "\(points)"
@@ -139,11 +146,18 @@ class GameViewController: UIViewController {
             }) { (success:Bool) -> Void in
                 
                 if self.isPlaying{
+                    if self.firstLaunch {
+                        self.firstLaunch = false
+                        self.points = -1
+                        self.scoreLabel.text = "\(self.points)"
+                    } else {
+                    
                     self.points+=1
                     self.scoreLabel.text = "\(self.points)"
                     
                     if (self.highScoreLabel.text! < self.scoreLabel.text!){
                         self.highScoreLabel.text = self.scoreLabel.text
+                    }
                     }
                     
                 }
