@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
         UserDefaults.standard.synchronize()
         
         //Display alert message with confirmation.
-        let myAlert = UIAlertController(title: "Error", message: "Registration is sucessful, Thank you!", preferredStyle: UIAlertControllerStyle.alert)
+        let myAlert = UIAlertController(title: "Great!", message: "Registration is sucessful, Thank you!", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             action in
