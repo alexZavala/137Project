@@ -15,6 +15,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var userRepeatPassword: UITextField!
     @IBAction func registerButton(_ sender: Any) {
         
+        self.userEmail.resignFirstResponder()
+        self.userPassword.resignFirstResponder()
+        self.userRepeatPassword.resignFirstResponder()
+        
         let email = userEmail.text
         let password = userPassword.text
         let repeatPassword = userRepeatPassword.text
@@ -46,6 +50,10 @@ class RegisterViewController: UIViewController {
         
         myAlert.addAction(okAction)
         self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     

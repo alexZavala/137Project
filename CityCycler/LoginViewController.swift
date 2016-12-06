@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordCredentials: UILabel!
     
     @IBAction func LoginButton(_ sender: UIButton) {
+        self.Username.resignFirstResponder()
+        self.Password.resignFirstResponder()
         
         let usr = Username.text
         let password = Password.text
@@ -45,6 +47,11 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     
     func displayMyaAlertMessage(userMessage: String){
         let myAlert = UIAlertController(title: "Error", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
