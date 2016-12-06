@@ -27,6 +27,11 @@ class GameViewController: UIViewController {
     var points = 0
     //var speed = 0
     var updateRate = 0.05
+    
+    //var gameSpeed1 = 1
+    //var gameSpeed2 = 2
+    //var gameSpeed3 = 3
+    
     var gameSpeed = 2.5
     var difficulty = 0.0
     var currentTime: CFTimeInterval = 1.8
@@ -34,9 +39,10 @@ class GameViewController: UIViewController {
     var firstLaunch:Bool = true
     
     
+    var gameSpeed1 = UserDefaults.standard.integer(forKey: "difficulty")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
@@ -49,34 +55,34 @@ class GameViewController: UIViewController {
         gameInit()
         
         
-//        if let view = self.view as! SKView? {
-//            // Load the SKScene from 'GameScene.sks'
-//            if let scene = SKScene(fileNamed: "GameScene") {
-//                // Set the scale mode to scale to fit the window
-//                scene.scaleMode = .aspectFill
-//                
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//            
-//            view.ignoresSiblingOrder = true
-//            
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//        }
+        //        if let view = self.view as! SKView? {
+        //            // Load the SKScene from 'GameScene.sks'
+        //            if let scene = SKScene(fileNamed: "GameScene") {
+        //                // Set the scale mode to scale to fit the window
+        //                scene.scaleMode = .aspectFill
+        //
+        //                // Present the scene
+        //                view.presentScene(scene)
+        //            }
+        //
+        //            view.ignoresSiblingOrder = true
+        //
+        //            view.showsFPS = true
+        //            view.showsNodeCount = true
+        //        }
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-//                print("Swiped right")
+                //                print("Swiped right")
                 if player.frame.origin.x < CGFloat(rightBoarder){
                     player.frame.origin.x += 90
                 }
                 break
             case UISwipeGestureRecognizerDirection.left:
-//                print("Swiped left")
+                //                print("Swiped left")
                 if player.frame.origin.x > CGFloat(leftBoarder){
                     player.frame.origin.x -= 90
                 }
@@ -109,63 +115,160 @@ class GameViewController: UIViewController {
         player.center.x = self.view.bounds.midX
         
         self.view.insertSubview(player, aboveSubview: road)
-
+        
         //Adding the enemey function
         addEnemy()
         
         updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(updateRate), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
-//    func updateSpeed(){
-//        if isPlaying {
-//            speed += 1//counter relying on avoided cars
-//            if speed % 3 == 0 && currentTime > 0.4 {
-//                currentTime -= 0.2//larger decrement for slower levels
-//            }
-//            if speed % 3 == 0 && currentTime > 0.2 {
-//                currentTime -= 0.04//smaller decrement for the faster levels
-//            }
-//        }
-//    }
-    
     func addEnemy(){
         if isPlaying {
-            var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
-            let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
-            randomEnemyFrame.origin.x = CGFloat(randomX)
-            enemy = EnemyCarView(frame: randomEnemyFrame)
-            //enemy.addPoluteAnimation() //adds pollution to the animation
-            self.view.insertSubview(enemy, aboveSubview: road)
             
-            //updateSpeed()//update speed with each enemy created
-            
-            //Change duration to make the cars go faster. The lower the number the faster the car goes.
-            //Change the delay to make the cars wait to be displayed on screen.
-            UIView.animate(withDuration: gameSpeed, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
-                self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
-            }) { (success:Bool) -> Void in
-                
-                if self.isPlaying{
-                    if self.firstLaunch {
-                        self.firstLaunch = false
-                        self.points = -1
-                        self.scoreLabel.text = "\(self.points)"
-                    } else {
+            if gameSpeed1 == 1{
+                var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
+                let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
+                randomEnemyFrame.origin.x = CGFloat(randomX)
+                enemy = EnemyCarView(frame: randomEnemyFrame)
+                //enemy.addPoluteAnimation() //adds pollution to the animation
+                self.view.insertSubview(enemy, aboveSubview: road)
+                UIView.animate(withDuration: gameSpeed, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                    self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
+                }) { (success:Bool) -> Void in
                     
-                    self.points+=1
-                    self.scoreLabel.text = "\(self.points)"
-                    
-                    if (self.highScoreLabel.text! < self.scoreLabel.text!){
-                        self.highScoreLabel.text = self.scoreLabel.text
+                    if self.isPlaying{
+                        if self.firstLaunch {
+                            self.firstLaunch = false
+                            self.points = -1
+                            self.scoreLabel.text = "\(self.points)"
+                        } else {
+                            
+                            self.points+=1
+                            self.scoreLabel.text = "\(self.points)"
+                            
+                            if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                                self.highScoreLabel.text = self.scoreLabel.text
+                            }
+                        }
                     }
-                    }
-                    
+                    self.enemy.removeFromSuperview()
+                    self.addEnemy()
                 }
-                self.enemy.removeFromSuperview()
-                self.addEnemy()
+            }
+            
+            else if gameSpeed1 == 2{
+                var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
+                let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
+                randomEnemyFrame.origin.x = CGFloat(randomX)
+                enemy = EnemyCarView(frame: randomEnemyFrame)
+                //enemy.addPoluteAnimation() //adds pollution to the animation
+                self.view.insertSubview(enemy, aboveSubview: road)
+                UIView.animate(withDuration: gameSpeed*0.75, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                    self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
+                }) { (success:Bool) -> Void in
+                    
+                    if self.isPlaying{
+                        if self.firstLaunch {
+                            self.firstLaunch = false
+                            self.points = -1
+                            self.scoreLabel.text = "\(self.points)"
+                        } else {
+                            
+                            self.points+=1
+                            self.scoreLabel.text = "\(self.points)"
+                            
+                            if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                                self.highScoreLabel.text = self.scoreLabel.text
+                            }
+                        }
+                    }
+                    self.enemy.removeFromSuperview()
+                    self.addEnemy()
+                }
+            }
+            
+            else if gameSpeed1 == 3{
+                var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
+                let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
+                randomEnemyFrame.origin.x = CGFloat(randomX)
+                enemy = EnemyCarView(frame: randomEnemyFrame)
+                //enemy.addPoluteAnimation() //adds pollution to the animation
+                self.view.insertSubview(enemy, aboveSubview: road)
+                UIView.animate(withDuration: gameSpeed * 0.4, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                    self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
+                }) { (success:Bool) -> Void in
+                    
+                    if self.isPlaying{
+                        if self.firstLaunch {
+                            self.firstLaunch = false
+                            self.points = -1
+                            self.scoreLabel.text = "\(self.points)"
+                        } else {
+                            
+                            self.points+=1
+                            self.scoreLabel.text = "\(self.points)"
+                            
+                            if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                                self.highScoreLabel.text = self.scoreLabel.text
+                            }
+                        }
+                    }
+                    self.enemy.removeFromSuperview()
+                    self.addEnemy()
+                }
+            }
+            else if gameSpeed1 > 3 || gameSpeed1 < 1{
+                //displayMyaAlertMessage(userMessage: "Can only select 1-3")
+            }
+                
+            else{
+                
+                var randomEnemyFrame = CGRect(x: 0, y:  -player.frame.size.height,width:  player.frame.size.width,height:  player.frame.size.height)
+                let randomX = leftBoarder - 20 + (Int(arc4random_uniform(3)) * (rightBoarder - leftBoarder)) // generates enemy to be 1 of 3 possible locations
+                randomEnemyFrame.origin.x = CGFloat(randomX)
+                enemy = EnemyCarView(frame: randomEnemyFrame)
+                //enemy.addPoluteAnimation() //adds pollution to the animation
+                self.view.insertSubview(enemy, aboveSubview: road)
+                
+                //updateSpeed()//update speed with each enemy created
+                
+                //Change duration to make the cars go faster. The lower the number the faster the car goes.
+                //Change the delay to make the cars wait to be displayed on screen.
+                UIView.animate(withDuration: gameSpeed, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                    self.enemy.frame.origin.y = self.view.bounds.height + self.enemy.frame.height
+                }) { (success:Bool) -> Void in
+                    
+                    if self.isPlaying{
+                        if self.firstLaunch {
+                            self.firstLaunch = false
+                            self.points = -1
+                            self.scoreLabel.text = "\(self.points)"
+                        } else {
+                            
+                            self.points+=1
+                            self.scoreLabel.text = "\(self.points)"
+                            
+                            if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                                self.highScoreLabel.text = self.scoreLabel.text
+                            }
+                        }
+                    }
+                    self.enemy.removeFromSuperview()
+                    self.addEnemy()
+                }
             }
         }
     }
+    
+    func displayMyaAlertMessage(userMessage: String){
+        let myAlert = UIAlertController(title: "Error", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+
     
     func update (time:Timer) {
         
@@ -178,7 +281,6 @@ class GameViewController: UIViewController {
                 gameSpeed -= 0.5
             }
         }
-        
         
         if (player.layer.presentation()?.frame)!.intersects((enemy.layer.presentation()?.frame)!) {
             endGame()
@@ -203,18 +305,25 @@ class GameViewController: UIViewController {
         explosion.addExplodeAnimation()
         
         //explosion.addExplodeAnimation { (success:Bool) -> Void in
-            let alert = UIAlertController(title: "Game over!", message: "Do you want to play again?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (alertAction:UIAlertAction!) -> Void in
-                self.gameInit() }))
+        let alert = UIAlertController(title: "Game over!", message: "Do you want to play again?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (alertAction:UIAlertAction!) -> Void in
+            self.gameInit() }))
         
         
-            self.present(alert, animated: true, completion: nil)
-            explosion.removeFromSuperview()
+        self.present(alert, animated: true, completion: nil)
+        explosion.removeFromSuperview()
         
         //highScoreLabel = scoreLabel
         //self.scoreLabel.text = String(0)
-       //}
+        //}
+    }
+    
+    func viewDidAppera(animated: Bool){
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLogin")
+        if(!isUserLoggedIn){
+            self.performSegue(withIdentifier: "loginView", sender: self)
+        }
     }
 }
 

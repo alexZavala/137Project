@@ -17,6 +17,7 @@
 		25476BB51DEA468400E76E47 /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25476BB21DEA468400E76E47 /* RoadView.swift */; };
 		254E54F21DF626ED0041884A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E54F11DF626ED0041884A /* LoginViewController.swift */; };
 		254E54F41DF657160041884A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E54F31DF657160041884A /* RegisterViewController.swift */; };
+		254E54FA1DF6A1120041884A /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E54F91DF6A1120041884A /* OptionsViewController.swift */; };
 		25F4939E1DF35D6200AEFDD0 /* ExplosionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F493961DF35D6200AEFDD0 /* ExplosionView.swift */; };
 		25F4939F1DF35D6200AEFDD0 /* blam1.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493981DF35D6200AEFDD0 /* blam1.png */; };
 		25F493A01DF35D6200AEFDD0 /* blam1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493991DF35D6200AEFDD0 /* blam1@2x.png */; };
@@ -65,6 +66,7 @@
 		25476BB21DEA468400E76E47 /* RoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
 		254E54F11DF626ED0041884A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		254E54F31DF657160041884A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		254E54F91DF6A1120041884A /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		25F493961DF35D6200AEFDD0 /* ExplosionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionView.swift; sourceTree = "<group>"; };
 		25F493981DF35D6200AEFDD0 /* blam1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam1.png; sourceTree = "<group>"; };
 		25F493991DF35D6200AEFDD0 /* blam1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam1@2x.png"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				ED50ADB61DDFD4F200328E45 /* GameScene.swift */,
 				ED50ADB81DDFD4F200328E45 /* GameViewController.swift */,
 				ED50ADBA1DDFD4F200328E45 /* Main.storyboard */,
+				254E54F91DF6A1120041884A /* OptionsViewController.swift */,
 				254E54F31DF657160041884A /* RegisterViewController.swift */,
 				EDBAF2851DF4BC1900F1B7CE /* MenuViewController.swift */,
 				254E54F11DF626ED0041884A /* LoginViewController.swift */,
@@ -395,6 +398,7 @@
 				25476BB51DEA468400E76E47 /* RoadView.swift in Sources */,
 				253805741DED3CD500EE9C8A /* EnemyCarView.swift in Sources */,
 				ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */,
+				254E54FA1DF6A1120041884A /* OptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
