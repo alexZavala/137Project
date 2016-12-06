@@ -15,6 +15,7 @@
 		25476BB31DEA468400E76E47 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB01DEA468400E76E47 /* road.png */; };
 		25476BB41DEA468400E76E47 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25476BB11DEA468400E76E47 /* road@2x.png */; };
 		25476BB51DEA468400E76E47 /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25476BB21DEA468400E76E47 /* RoadView.swift */; };
+		254E54F21DF626ED0041884A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E54F11DF626ED0041884A /* LoginViewController.swift */; };
 		25F4939E1DF35D6200AEFDD0 /* ExplosionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F493961DF35D6200AEFDD0 /* ExplosionView.swift */; };
 		25F4939F1DF35D6200AEFDD0 /* blam1.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493981DF35D6200AEFDD0 /* blam1.png */; };
 		25F493A01DF35D6200AEFDD0 /* blam1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25F493991DF35D6200AEFDD0 /* blam1@2x.png */; };
@@ -61,6 +62,7 @@
 		25476BB01DEA468400E76E47 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
 		25476BB11DEA468400E76E47 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
 		25476BB21DEA468400E76E47 /* RoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
+		254E54F11DF626ED0041884A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		25F493961DF35D6200AEFDD0 /* ExplosionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionView.swift; sourceTree = "<group>"; };
 		25F493981DF35D6200AEFDD0 /* blam1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blam1.png; sourceTree = "<group>"; };
 		25F493991DF35D6200AEFDD0 /* blam1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blam1@2x.png"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				ED50ADB81DDFD4F200328E45 /* GameViewController.swift */,
 				ED50ADBA1DDFD4F200328E45 /* Main.storyboard */,
 				EDBAF2851DF4BC1900F1B7CE /* MenuViewController.swift */,
+				254E54F11DF626ED0041884A /* LoginViewController.swift */,
 				ED50ADBD1DDFD4F200328E45 /* Assets.xcassets */,
 				ED50ADBF1DDFD4F200328E45 /* LaunchScreen.storyboard */,
 				ED50ADC21DDFD4F200328E45 /* Info.plist */,
@@ -384,6 +387,7 @@
 				ED50ADB71DDFD4F200328E45 /* GameScene.swift in Sources */,
 				ED50ADB91DDFD4F200328E45 /* GameViewController.swift in Sources */,
 				EDBAF2861DF4BC1900F1B7CE /* MenuViewController.swift in Sources */,
+				254E54F21DF626ED0041884A /* LoginViewController.swift in Sources */,
 				25476BB51DEA468400E76E47 /* RoadView.swift in Sources */,
 				253805741DED3CD500EE9C8A /* EnemyCarView.swift in Sources */,
 				ED50ADB11DDFD4F200328E45 /* AppDelegate.swift in Sources */,

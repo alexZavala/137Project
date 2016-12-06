@@ -11,13 +11,22 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    var nameLabelText = String()
+    
+    
+    
     @IBAction func PlayButton(_ sender: AnyObject) {
         
         
     }
     
     
+    
     override func viewDidLoad() {
+        
+        nameLabel.text = nameLabelText
+        
         super.viewDidLoad()
     }
     
