@@ -14,14 +14,9 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     var nameLabelText = String()
     
-    
-    
     @IBAction func PlayButton(_ sender: AnyObject) {
-        
-        
+    
     }
-    
-    
     
     override func viewDidLoad() {
         
@@ -32,6 +27,13 @@ class MenuViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func viewDidAppera(animated: Bool){
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLogin")
+        if(!isUserLoggedIn){
+            self.performSegue(withIdentifier: "loginView", sender: self)
+        }
     }
     
 }

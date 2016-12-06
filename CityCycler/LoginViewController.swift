@@ -21,42 +21,38 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginButton(_ sender: UIButton) {
         
-        let usr = "cmpe137Student"
-        let password = "student"
+        let usr = Username.text
+        let password = Password.text
+        let usrEmailStored = UserDefaults.standard.string(forKey: "email");
+        let passwordStored = UserDefaults.standard.string(forKey: "password");
         
-        if Username.text == usr && Password.text != password{
-            credentialsLabel.text = ""
-            passwordCredentials.text = "Password is incorrect, Please Re-enter"
-            passwordCredentials.textColor = UIColor.red
-            Username.resignFirstResponder()
-            Password.resignFirstResponder()
-        }
-        else if Username.text == usr && Password.text == password{
-            credentialsLabel.textColor = UIColor.green
-            passwordCredentials.textColor = UIColor.green
-            credentialsLabel.text = "✓"
-            passwordCredentials.text = "✓"
-            Username.resignFirstResponder()
-            Password.resignFirstResponder()
+        if(usrEmailStored == usr){
+            if(passwordStored == password){
+                //login sucessful
+                UserDefaults.standard.set(true, forKey:"isUserLogin")
+                UserDefaults.standard.synchronize()
+                self.dismiss(animated: true, completion: nil)
+            }
+            else{
+                displayMyaAlertMessage(userMessage: "Unsucessful Login")
+            }
         }
         
-        else if Username.text != usr && Password.text == password{
-            credentialsLabel.text = "Username incorrect"
-            passwordCredentials.text = ""
-            credentialsLabel.textColor = UIColor.red
-            Username.resignFirstResponder()
-            Password.resignFirstResponder()
+        //create a case if userEmailStored != usr
+        if(usrEmailStored != usr){
+            if(passwordStored != password){
+            displayMyaAlertMessage(userMessage: "Unsucessful Login")
+            }
         }
-            
-     
-        else{
-            credentialsLabel.text = "Credentials are incorrect"
-            passwordCredentials.text = "Credentials are incorrect"
-            credentialsLabel.textColor = UIColor.red
-            passwordCredentials.textColor = UIColor.red
-            Username.resignFirstResponder()
-            Password.resignFirstResponder()
-        }
+    }
+    
+    func displayMyaAlertMessage(userMessage: String){
+        let myAlert = UIAlertController(title: "Error", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -72,21 +68,5 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let DestViewController : MenuViewController = segue.destination as! MenuViewController
-            DestViewController.nameLabelText = Username.text!
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
