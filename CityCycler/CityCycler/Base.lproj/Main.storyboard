@@ -42,7 +42,7 @@
                                 </state>
                                 <connections>
                                     <action selector="PlayButton:" destination="28R-Vf-lBV" eventType="touchUpInside" id="Ii0-TE-eaN"/>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="ywo-fi-ZRN"/>
+                                    <segue destination="hR6-or-CFh" kind="show" id="Rnp-a4-qkd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afD-Zi-LBn">
@@ -355,7 +355,7 @@
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="goPlay:" destination="hR6-or-CFh" eventType="touchUpInside" id="7gM-Qj-auO"/>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" id="sLy-xj-Bpu"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="sy8-PM-fCA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -466,6 +466,6 @@
         <image name="road.png" width="621" height="2208"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sLy-xj-Bpu"/>
+        <segue reference="r8F-mN-KMt"/>
     </inferredMetricsTieBreakers>
 </document>

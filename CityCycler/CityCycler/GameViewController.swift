@@ -282,7 +282,7 @@ class GameViewController: UIViewController {
             }
         }
         
-        if (player.layer.presentation()?.frame)!.intersects((enemy.layer.presentation()?.frame)!) {
+        if ((player.layer.presentation()?.frame)?.intersects((enemy.layer.presentation()?.frame)!))! {
             endGame()
         }
     }
