@@ -204,14 +204,15 @@ class GameViewController: UIViewController {
                             self.points = -1
                             self.scoreLabel.text = "\(self.points)"
                         } else {
-                            
                             self.points+=1
                             self.scoreLabel.text = "\(self.points)"
                             
-                            if (self.highScoreLabel.text! < self.scoreLabel.text!){
+                            if (self.highScoreLabel.text! < self.scoreLabel.text! || self.highScoreLabel.text! <= String(9)){
                                 self.highScoreLabel.text = self.scoreLabel.text
                             }
+                            //Add condition if highscoreLabel is > scoreLabel
                         }
+
                     }
                     self.enemy.removeFromSuperview()
                     self.addEnemy()
