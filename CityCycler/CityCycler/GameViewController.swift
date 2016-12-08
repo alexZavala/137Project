@@ -122,6 +122,16 @@ class GameViewController: UIViewController {
         updateTimer = Timer.scheduledTimer(timeInterval: TimeInterval(updateRate), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
+    
+    func gameEnd() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as UIViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        print("here it is")
+        }
+    
+    
     func addEnemy(){
         if isPlaying {
             
@@ -307,7 +317,7 @@ class GameViewController: UIViewController {
         
         //explosion.addExplodeAnimation { (success:Bool) -> Void in
         let alert = UIAlertController(title: "Game over!", message: "Do you want to play again?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: { (alertAction:UIAlertAction!) -> Void in self.gameEnd()}))
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (alertAction:UIAlertAction!) -> Void in
             self.gameInit() }))
         
