@@ -54,6 +54,12 @@ class GameViewController: UIViewController {
         road.addDriveAnimation()
         gameInit()
         
+//        HighscoreViewController.sharedInstance.score1.text = "0";
+//        HighscoreViewController.sharedInstance.score2.text = "0";
+//        HighscoreViewController.sharedInstance.score3.text = "0";
+//        HighscoreViewController.sharedInstance.score4.text = "0";
+//        HighscoreViewController.sharedInstance.score5.text = "0";
+        
         
         //        if let view = self.view as! SKView? {
         //            // Load the SKScene from 'GameScene.sks'
@@ -325,9 +331,7 @@ class GameViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         explosion.removeFromSuperview()
         
-        //highScoreLabel = scoreLabel
-        //self.scoreLabel.text = String(0)
-        //}
+        HighscoreViewController.sharedInstance.storeHighScore(score: highScoreLabel.text!)
     }
     
     func viewDidAppera(animated: Bool){
