@@ -29,11 +29,11 @@ class MenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func viewDidAppera(animated: Bool){
-        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLogin")
-        if(!isUserLoggedIn){
-            self.performSegue(withIdentifier: "loginView", sender: self)
-        }
-    }
+//    func viewDidAppera(animated: Bool){
+//        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLogin")
+//        if(!isUserLoggedIn){
+//            self.performSegue(withIdentifier: "loginView", sender: self)
+//        }
+//    }
     
 }
