@@ -76,6 +76,7 @@ class GameViewController: UIViewController {
         //            view.showsFPS = true
         //            view.showsNodeCount = true
         //        }
+        HighscoreViewController.sharedInstance.initialRun()
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
