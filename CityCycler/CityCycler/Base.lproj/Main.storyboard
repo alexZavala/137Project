@@ -383,6 +383,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xag-0L-ThV">
+                                <frame key="frameInset" minX="140" minY="534" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Menu"/>
+                                <connections>
+                                    <segue destination="28R-Vf-lBV" kind="show" id="RtQ-sa-m7Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93942072610000005" green="0.93942072610000005" blue="0.93942072610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -445,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMV-v7-BR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1015.2" y="912.5937031484259"/>
+            <point key="canvasLocation" x="-1063" y="907"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="YZ2-WA-6hC">
@@ -625,6 +633,7 @@
         <image name="road.png" width="621" height="2208"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="RtQ-sa-m7Z"/>
         <segue reference="r8F-mN-KMt"/>
     </inferredMetricsTieBreakers>
 </document>
